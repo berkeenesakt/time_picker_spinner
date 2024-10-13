@@ -60,15 +60,21 @@ class _MyHomePageState extends State<MyHomePage> {
             TimePickerSpinner(
               locale: const Locale('en', ''),
               time: dateTime,
-              is24HourMode: false,
+              is24HourMode: true,
               isShowSeconds: false,
               itemHeight: 80,
+              alignment: Alignment.center,
               normalTextStyle: const TextStyle(
                 fontSize: 24,
               ),
-              highlightedTextStyle:
-                  const TextStyle(fontSize: 24, color: Colors.blue),
+              highlightedTextStyle: const TextStyle(fontSize: 24, color: Colors.blue),
               isForce2Digits: true,
+              expandDigits: true,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black26),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
+              ),
+              itemWidth: 40,
               onTimeChange: (time) {
                 setState(() {
                   dateTime = time;
